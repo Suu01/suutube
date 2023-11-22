@@ -13,12 +13,8 @@ const handleHome = (req, res) => {
   return res.send("I love middlewares");
 };
 
-const handleLogin = (req, res) => {
-  return res.send({ message: "Login here." });
-};
-
-app.get("/", gossipMiddleware, handleHome);
-app.get("/login", handleLogin);
+app.use(gossipMiddleware);
+app.get("/", handleHome);
 
 app.listen(4000, () =>
   console.log(`Server Listening on port http://localhost:${PORT}`)
