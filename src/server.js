@@ -5,8 +5,7 @@ const PORT = 4000;
 const app = express();
 
 const gossipMiddleware = (req, res, next) => {
-  console.log("I'm in the middle");
-  return res.send("I have the power now");
+  console.log(`Someone is going to: ${req.url}`);
   next();
 };
 
